@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/_head.html',{
+"title":"Home"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.html',{})
+      <main class="page">
+         <section data-fullscreen class="welcome">
+            <div class="welcome__container">
+               <h1 class="welcome__title">Yahshi Top 10 Tarjima kinolar Uzbek tilida</h1>
+               <h2 class="welcome__subtitle">Kinolar uzbek tilida .mp4 formatga Telegram kanalida filmlarni tomosha qiling @kinolarfilm1</h2>
+            </div>
+            <div class="welcome__bg">
+               <img src="@img/welcome-bg.jpg" alt="">
+               <img src="@img/shape-mask.svg" alt="">
+            </div>
+         </section>
+
+         <section class="videos">
+            <div class="videos__container">
+               <video
+                  id="my-video"
+                  class="video-js"
+                  controls
+                  preload="auto"
+                  width="1440"
+                  height="720"
+                  poster="@img/welcome-bg.jpg"
+                  data-setup="{}">
+                  <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" type="video/mp4" />
+                  <p class="vjs-no-js">
+                     To view this video please enable JavaScript, and consider upgrading to a
+                     web browser that
+                     <a href="https://videojs.com/html5-video-support/" target="_blank"
+                     >supports HTML5 video</a
+                     >
+                  </p>
+               </video>
+            </div>
+         </section>
+        
+      </main>
+      @@include('html/_footer.html',{})
+   </div>
+   @@include('html/_js.html',{})
+</body>
+
+</html>

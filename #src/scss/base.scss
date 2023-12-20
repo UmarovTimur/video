@@ -1,0 +1,179 @@
+// Общий файл элементов форм
+// Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
+//@import "base/forms/forms";
+
+// Стили спойлеров
+// @import "base/spollers";
+
+// Стили попапов
+//@import "base/popup";
+//@import "libs/hystmodal";
+
+// Стили Swiper
+// Базовые стили
+//@import "base/swiper";
+// Полный набор стилей из scss/libs/swiper.scss
+// @import "libs/swiper.scss";
+
+// Подключение cтилей Tippy
+//@import "libs/tippy";
+
+
+// Стили табов
+// @import "base/tabs";
+
+// Стили карт
+// @import "base/maps";
+
+// Стили блока "показать еще"
+// @import "base/showmore";
+
+// Cтили simplebar
+//@import '../../node_modules/simplebar/dist/simplebar.css';
+
+// Календарь
+//@import "libs/datepicker";
+
+// Стили для полноэкранного блока
+//@import "base/fullscreen";
+
+// Стили Lightgallery
+// Базовые стили
+//@import 'libs/gallery/lightgallery';
+// Стили дополнений
+// @import 'libs/gallery/lg-thumbnail';
+// @import 'libs/gallery/lg-video';
+// @import 'libs/gallery/lg-autoplay';
+// @import 'libs/gallery/lg-zoom';
+// @import 'libs/gallery/lg-pager';
+// @import 'libs/gallery/lg-fullscreen';
+// @import 'libs/gallery/lg-share';
+// @import 'libs/gallery/lg-comments';
+// @import 'libs/gallery/lg-rotate';
+// @import 'libs/gallery/lg-medium-zoom';
+// @import 'libs/gallery/lg-relative-caption';
+
+// Все стили
+// @import 'libs/gallery/lightgallery-bundle.scss';
+
+
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+[class*="-ibg"] {
+   position: relative;
+
+   img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+   }
+}
+
+[class*="-ibg_contain"] {
+   img {
+      object-fit: contain;
+   }
+}
+
+// Шаблоны (заготовки)
+// @extend %имя шаблона;
+// Сниппет (SCSS): ex
+
+// Счетчик для списка
+%listCounter {
+   list-style-type: none;
+   counter-reset: item;
+
+   li {
+      position: relative;
+
+      &:before {
+         counter-increment: item;
+         content: counter(item);
+         position: absolute;
+         left: 0;
+         top: 0;
+      }
+   }
+}
+
+// Адаптивное видео
+%responsiveVideo {
+   position: relative;
+   overflow: hidden;
+   height: 0;
+   padding-bottom: 56.25%;
+
+   video,
+   iframe,
+   object,
+   embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+// Видео в качестве фона
+%videoBackground {
+
+   video,
+   iframe,
+   object,
+   embed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      transform: translateX(-50%) translateY(-50%);
+      background-size: cover;
+   }
+}
+
+// Серый фильтр
+%grayfilter {
+   transition: all 0.3s ease 0s;
+   filter: grayscale(1);
+
+   @media (any-hover: hover) {
+      &:hover {
+         //filter: grayscale(0);
+      }
+   }
+}
+
+// Отменить выделение
+%noselect {
+   user-select: none;
+}
+
+// Зеркальное отображение
+%mirror {
+   transform: scale(-1, 1);
+}
+
+// Плавный скролл
+%smoothscroll {
+   -webkit-overflow-scrolling: touch;
+}
+
+// Скрыть скролл
+%hidescroll {
+   &::-webkit-scrollbar {
+      display: none;
+   }
+}
+
+%cuf {
+   font-family: CormorantUpright;
+}
