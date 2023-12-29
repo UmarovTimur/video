@@ -45,7 +45,7 @@ export function setHash(hash) {
 export function fullVHfix() {
    const fullScreens = document.querySelectorAll('[data-fullscreen]');
    if (fullScreens.length && isMobile.any()) {
-      window.addEventListener('resize', fixHeight);
+      // window.addEventListener('resize', fixHeight);
       function fixHeight() {
          let vh = window.innerHeight * 0.01;
          document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -583,7 +583,7 @@ export function indexInParent(parent, element) {
    const array = Array.prototype.slice.call(parent.children);
    return Array.prototype.indexOf.call(array, element);
 };
-// Обработа медиа запросов из атрибутов 
+// Обработка медиа запросов из атрибутов 
 export function dataMediaQueries(array, dataSetValue) {
    // Получение объектов с медиа запросами
    const media = Array.from(array).filter(function (item, index, self) {

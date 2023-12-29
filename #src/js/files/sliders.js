@@ -17,7 +17,7 @@ EffectFade, Lazy, Manipulation
 
 // Стили Swiper
 // Базовые стили
-import "../../scss/base/swiper.scss";
+// import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
@@ -27,33 +27,31 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.films-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.films-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
+			slidesPerView: 3,
+			spaceBetween: 20,
 			autoHeight: true,
 			speed: 800,
 
 			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
+			// simulateTouch: true,
+			loop: true,
+			// preloadImages: false,
+			lazy: true,
 
-			/*
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
 
 			// Пагинация
 			/*
@@ -64,41 +62,33 @@ function initSliders() {
 			*/
 
 			// Скроллбар
-			/*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
+			// scrollbar: {
+			// 	el: '.swiper-scrollbar',
+			// 	draggable: true,
+			// },
 
-			// Кнопки "влево/вправо"
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
+			// // Кнопки "влево/вправо"
+			// navigation: {
+			// 	prevEl: '.swiper-button-prev',
+			// 	nextEl: '.swiper-button-next',
+			// },
 
 			// Брейкпоинты
-			/*
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
+					slidesPerView: 1.4,
+					spaceBetween: 15,
 					autoHeight: true,
 				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
 				992: {
-					slidesPerView: 3,
+					slidesPerView: 2.3,
 					spaceBetween: 20,
 				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+				1440: {
+					slidesPerView: 3.4,
+					spaceBetween: 15,
 				},
 			},
-			*/
 			// События
 			on: {
 

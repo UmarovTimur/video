@@ -1,8 +1,9 @@
-
+// ========================================================================================================================================================================================================================================================
 
 .welcome {
     width: 100vw;
     // height: 100vh;
+    transition: all .4s ease 0s;
     height: calc(var(--vh, 1vh) * 100);
 
 
@@ -42,6 +43,7 @@
 
         opacity: .8;
         font-size: 18px;
+        line-height: 120%;
 
         @media screen and (max-width:$mobile) {
             font-size: 16px;
@@ -59,10 +61,20 @@
             left: 0;
             top: 0;
             object-fit: cover;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         &>img:last-child {
-            left: -30%;   
+            left: -30%;
+            object-fit: fill;
+            @media screen and (min-aspect-ratio: 10/8) {
+                object-fit: cover;
+            }
         }
+        
         @media screen and (max-width:$tablet) {
             &>img:last-child {
                 display: none; 
@@ -81,3 +93,73 @@
         }
     }
 }
+
+// ========================================================================================================================================================================================================================================================
+
+.videos {
+
+    @include adaptiveValue('padding-top',60,20);
+    @include adaptiveValue('padding-bottom',60,20);
+    
+
+    // .videos__container
+
+    &__container {
+        
+        @media screen and (max-width:$tablet) {
+            margin: 0px -20px;
+        }
+
+
+        & video {
+
+        }
+    }
+}
+.video-js {
+}
+
+
+// ========================================================================================================================================================================================================================================================
+
+.films-slider {
+    @include adaptiveValue('margin-bottom',60,20);
+    
+
+    // width: 100%;
+    // height: 100%;
+
+    // .films-slider__container
+
+    &__container {
+        @media (max-width:$pc) {
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+        }
+    }
+    
+    // .films-slider__wrapper
+    
+    &__wrapper {
+        
+    }
+
+    // .films-slider__slide
+
+    &__slide {
+        aspect-ratio: 7/10;
+        position: relative;
+        height: 500px;
+
+        & img {
+            // display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
+}
+
+
+// ========================================================================================================================================================================================================================================================

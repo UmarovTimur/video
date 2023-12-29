@@ -16,24 +16,25 @@
             </div>
             <div class="welcome__bg">
                <img src="@img/welcome-bg.jpg" alt="">
-               <img src="@img/shape-mask.svg" alt="">
+               <img src="@img/shape-mask 1.png" alt="">
             </div>
          </section>
 
          <section class="videos">
             <div class="videos__container">
                <video
+                  class="video-js vjs-default-skin"
                   id="my-video"
-                  class="video-js"
+                  data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'
                   controls
                   preload="auto"
-                  width="1440"
-                  height="720"
+                  width="100vw"
+                  height="auto"
                   poster="@img/welcome-bg.jpg"
                   data-setup="{}">
                   <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" type="video/mp4" />
                   <p class="vjs-no-js">
-                     To view this video please enable JavaScript, and consider upgrading to a
+                     To view this video please <strong>enable JavaScript,</strong> and consider upgrading to a
                      web browser that
                      <a href="https://videojs.com/html5-video-support/" target="_blank"
                      >supports HTML5 video</a
@@ -41,6 +42,61 @@
                   </p>
                </video>
             </div>
+         </section>
+
+         <section class="page__slider">
+            <div class="swiper films-slider films-slider__container">
+               <div class="swiper-wrapper films-slider__wrapper">
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/welcome-bg.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image2.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image3.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image4.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image1.webp" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/welcome-bg.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image2.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image1.webp" alt="">
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="@img/image3.jpg" alt="">
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-pagination"></div>
+               <div class="swiper-scrollbar"></div>
+             </div>
+             
          </section>
         
       </main>

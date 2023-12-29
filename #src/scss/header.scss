@@ -1,11 +1,29 @@
 //====================================================================================================
 
 .header {
-	@include adaptiveValue('padding-top',50,20);
-	@include adaptiveValue('padding-bottom',50,25);
+	// @include adaptiveValue('padding-top',50,20);
+	// @include adaptiveValue('padding-bottom',50,20);
+	padding: 25px 0px;
 	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 50;
 	width: 100vw;
+	transition: all .7s ease 0s;
+
+	
+
+	@media screen and (min-width:$tablet) {
+		padding: 50px 0px;
+		&._header-scroll {
+			padding: 30px 0px;
+			background-color: rgba(000,000,000,.7);
+			top: -100%;
+			&._header-show {
+				top: 0;
+			}
+		}
+	}
 
 	// .header__container
 
@@ -43,7 +61,7 @@
 
 		@include adaptiveValue('padding-left',25,15,991.98,320);
 		@include adaptiveValue('padding-right',50,15,991.98,320);
-		@include adaptiveValue('padding-top',80,60,991.98,320);
+		@include adaptiveValue('padding-top',110,80,991.98,320);
 		
 	}
 
@@ -55,6 +73,14 @@
 		@media screen and (min-width:$tablet) {
 			display: flex;
 
+		}
+		@media screen and (hover: hover) {
+			&:hover > li {
+				color: rgba(255, 255, 255, .6);
+				& > a:hover {
+					color: white;
+				}
+			}
 		}
 	}
 
@@ -74,11 +100,11 @@
 	
 		@media screen and (max-width:$tablet) {
 			font-size: 26px;
+			&:not(:last-child) {
+				margin-bottom: rem(20);
+			}
 		}
 
-		&:not(:last-child) {
-			margin-bottom: rem(20);
-		}
 
 
 
@@ -151,6 +177,7 @@
 		span,
 		&::before,
 		&::after {
+			box-shadow: 0px 0px 2px #111;
 			content: "";
 			transition: all 0.3s ease 0s;
 			right: 0;
