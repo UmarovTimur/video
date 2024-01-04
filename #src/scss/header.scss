@@ -12,8 +12,14 @@
 	transition: all .7s ease 0s;
 
 	
-
+	
+	
 	@media screen and (min-width:$tablet) {
+
+		
+		&._dark-bg {
+			background-color: rgba(000,000,000,.9);
+		}
 		padding: 50px 0px;
 		&._header-scroll {
 			padding: 30px 0px;
@@ -36,8 +42,47 @@
 	// .header__logo
 
 	&__logo {
-	}
+		position: relative;
+		color: var(--white);
+		font-size: 19px;
+		line-height: 110%;
+		font-weight: 600;
+		overflow: hidden;
+		padding: 2px 2px;
+		width: em(65,19);
+		height: em(19,19);
+		transition: all .5s ease 0s;
 
+		& span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all .5s ease 0s;
+			// min-height: 0;
+			
+		}
+		& div {
+			position: absolute;
+			top: 100%;
+			left: 0;
+		transition: all .5s ease 0s;
+
+		}
+		@media screen and (hover: hover) {
+
+			&:hover span{
+				top: -100%;
+			}
+			&:hover div{
+				top: 0;
+			}
+		}
+
+		@media screen and (max-width:$tablet) {
+		}
+		
+	}	
+	
 	// .header__menu
 
 	&__menu {

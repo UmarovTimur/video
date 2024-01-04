@@ -20,7 +20,7 @@
 
 <body>
    <div class="wrapper">
-      <header data-scroll-show class="header">
+      <header data-scroll-show class="header @@class">
    <div class="header__container">
       <nav class="header__menu">
          <div class="header__menu-burger">
@@ -54,21 +54,26 @@
             </li>
          </ul>
       </nav>
-      <div class="header__logo"></div>
+      <a href="#" class="header__logo">
+         <span>VIDEO</span>
+         <div>VIDEO</div>
+      </a>
       <div tabindex="2" class="header__burger icon-menu">
          <span></span>
       </div>
    </div>
 </header>
       <main class="page">
-         <section data-fullscreen class="welcome">
+         <section class="welcome">
             <div class="welcome__container">
                <h1 class="welcome__title">Yahshi Top 10 Tarjima kinolar Uzbek tilida</h1>
                <h2 class="welcome__subtitle">Kinolar uzbek tilida .mp4 formatga Telegram kanalida filmlarni tomosha qiling @kinolarfilm1</h2>
             </div>
             <div class="welcome__bg">
-               <img src="img/welcome-bg.jpg" alt="">
-               <img src="img/shape-mask 1.png" alt="">
+               <div data-bg-parralax class="welcome__background-image _ibg">
+                  <img src="img/welcome-bg.jpg" alt="">
+               </div>
+               <img data-fullscreen src="img/shape-mask 1.png" alt="">
             </div>
          </section>
 
@@ -93,6 +98,16 @@
                      >
                   </p>
                </video>
+               <div class="videos__body">
+                  <h2 class="videos__title">
+                     Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
+                  </h2>
+                  <p class="videos__decription">
+                     Iso Masihning ILOHIY TUG'ILISHI. Yahshi kino O'zbek tilida Tarjima kinolar: 12+
+                     Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
+                  </p>
+               </div>
+               
             </div>
          </section>
 
@@ -102,51 +117,160 @@
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/welcome-bg.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image2.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image3.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image4.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image1.webp" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/welcome-bg.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image2.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image1.webp" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                   <div class="swiper-slide films-slider__slide">
                      <a href="#">
                         <img src="img/image3.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
                      </a>
                   </div>
                </div>
-               <div class="swiper-pagination"></div>
-               <div class="swiper-scrollbar"></div>
+               <!-- <div class="swiper-pagination"></div> -->
+               <!-- <div class="swiper-scrollbar"></div> -->
+             </div>
+             
+         </section>
+
+         <section class="page__slider">
+            <div class="swiper films-slider-2 films-slider__container">
+               <div class="swiper-wrapper films-slider__wrapper">
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/welcome-bg.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image2.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image3.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image4.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image1.webp" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/welcome-bg.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image2.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image1.webp" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+                  <div class="swiper-slide films-slider__slide">
+                     <a href="#">
+                        <img src="img/image3.jpg" alt="">
+                        <div class="films-slider__title">
+                           Random text name for films
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               <!-- <div class="swiper-pagination"></div> -->
+               <!-- <div class="swiper-scrollbar"></div> -->
              </div>
              
          </section>

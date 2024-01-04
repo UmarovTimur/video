@@ -7,8 +7,10 @@
 
 <body>
    <div class="wrapper">
-      @@include('html/_header.html',{})
-      <main class="page">
+      @@include('html/_header.html',{
+         "class":"_dark-bg"
+      })
+      <main class="film">
 
          <section class="videos">
             <div class="videos__container">
@@ -33,6 +35,10 @@
                </video>
             </div>
          </section>
+
+         <aside class="sidebar">
+            
+         </aside>
 
       </main>
       @@include('html/_footer.html',{})

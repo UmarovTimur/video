@@ -31,6 +31,9 @@ flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 flsFunctions.fullVHfix();
 
+// Функций превращения изображения в background [ibg]
+flsFunctions.ibg();
+
 /*
 Модуль работы со спойлерами
 Документация: https://template.fls.guru/template-docs/modul-spojlery.html
@@ -168,6 +171,10 @@ flsScroll.headerScroll();
 
 // Функционал липкого блока
 // flsScroll.stickyBlock();
+
+
+// Анимация параллакса заднего фона
+flsScroll.parralaxBackground();
 
 // Модуль поекранної прокрутки
 // Документация: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html

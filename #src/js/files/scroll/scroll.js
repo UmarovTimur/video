@@ -217,6 +217,19 @@ export function digitsCounter() {
 	document.addEventListener("watcherCallback", digitsCounterAction);
 }
 
+export function parralaxBackground() {
+	if (document.querySelector("[data-bg-parralax]")) {
+		// document.querySelector(".welcome__background-image").style.backgroundPositionY = `22px`;
+		if (document.body.clientWidth > 992) {
+			document.addEventListener('windowScroll', function (e) {
+				const scrollTop = window.scrollY;
+				document.querySelector(".welcome__background-image").style.top = `${Math.floor(scrollTop/2)}px`;
+			})
+		}
+	}
+}
+
+// export function 
 // При подключении модуля обработчик события запустится автоматически
 setTimeout(() => {
 	if (addWindowScrollEvent) {
