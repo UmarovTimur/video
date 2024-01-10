@@ -39,11 +39,12 @@ flsFunctions.ibg();
 Документация: https://template.fls.guru/template-docs/modul-spojlery.html
 Сниппет (HTML): spollers
 */
+
 // flsFunctions.spollers();
 
 /*
 Модуль работы с табами
-Документация: https://template.fls.guru/template-docs/modul-taby.html
+Документация: https://template.fls.guru/template-docs/-taby.html
 Сниппет (HTML): tabs
 */
 // flsFunctions.tabs();
@@ -174,7 +175,7 @@ flsScroll.headerScroll();
 
 
 // Анимация параллакса заднего фона
-flsScroll.parralaxBackground();
+// flsScroll.parralaxBackground();
 
 // Модуль поекранної прокрутки
 // Документация: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html

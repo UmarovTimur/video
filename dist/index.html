@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,10 +54,10 @@
             </li>
          </ul>
       </nav>
-      <a href="#" class="header__logo">
-         <span>VIDEO</span>
-         <div>VIDEO</div>
-      </a>
+      <div href="#" class="header__logo">
+         <a href="" >KRK</a>
+         <a href="" >UZB</a>
+      </div>
       <div tabindex="2" class="header__burger icon-menu">
          <span></span>
       </div>
@@ -79,7 +79,8 @@
 
          <section class="videos">
             <div class="videos__container">
-               <video
+               <video 
+                  id="mainVideoView"
                   class="video-js vjs-default-skin"
                   id="my-video"
                   data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'
@@ -111,169 +112,129 @@
             </div>
          </section>
 
-         <section class="page__slider">
-            <div class="swiper films-slider films-slider__container">
-               <div class="swiper-wrapper films-slider__wrapper">
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/welcome-bg.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image2.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image3.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image4.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image1.webp" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/welcome-bg.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image2.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image1.webp" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image3.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-               </div>
-               <!-- <div class="swiper-pagination"></div> -->
-               <!-- <div class="swiper-scrollbar"></div> -->
-             </div>
-             
-         </section>
+         <section class="films">
+    <div class="films__container">
 
-         <section class="page__slider">
-            <div class="swiper films-slider-2 films-slider__container">
-               <div class="swiper-wrapper films-slider__wrapper">
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/welcome-bg.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image2.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image3.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image4.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image1.webp" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/welcome-bg.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image2.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image1.webp" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-                  <div class="swiper-slide films-slider__slide">
-                     <a href="#">
-                        <img src="img/image3.jpg" alt="">
-                        <div class="films-slider__title">
-                           Random text name for films
-                        </div>
-                     </a>
-                  </div>
-               </div>
-               <!-- <div class="swiper-pagination"></div> -->
-               <!-- <div class="swiper-scrollbar"></div> -->
-             </div>
-             
-         </section>
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+
+          <h4 class="films__item-title">Random Text name</h4>
+
+       </article>
+       
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image3.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+       
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image4.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image4.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image5.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image6.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image1.webp" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+       
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image3.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+
+       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
+          <div class="films__item-image">
+
+             <img src="img/image3.jpg" alt="">
+
+          </div>
+          <h4 class="films__item-title">Random Text name</h4>
+       </article>
+    </div>
+ </section>
         
       </main>
       <footer class="footer">

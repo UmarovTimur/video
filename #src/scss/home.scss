@@ -113,99 +113,55 @@
 
 // ========================================================================================================================================================================================================================================================
 
-.videos {
-
-    @include adaptiveValue('padding-bottom',60,20);
-    
-
-    // .videos__container
-
-    &__container {
-        
-        @media screen and (max-width:$tablet) {
-            margin: 0px -20px;
-        }
-
-
-        & video {
-
-        }
-    }
-
-    &__body {
-        @media screen and (max-width:$tablet) {
-            margin: 0 20px;
-        }
-    }
-
-    &__title {
-        @include adaptiveValue('font-size',38,18);
-        margin-top: em(10);
-        margin-bottom: em(10);
-        font-weight: 600;
-        font-family: "Roboto", sans-serif;
-    }
-
-    &__decription {
-
-        font-family: "Roboto", sans-serif;
-        line-height: 120%;
-
-    }
-}
-
 // ========================================================================================================================================================================================================================================================
 
-.films-slider {
+.films {
+
     @include adaptiveValue('margin-bottom',60,20);
-    
 
-    // width: 100%;
-    // height: 100%;
 
-    // .films-slider__container
+    // .films__container
 
     &__container {
-        @media (max-width:$pc) {
-            padding-right: 15px !important;
-            padding-left: 15px !important;
-        }
-    }
-    
-    // .films-slider__wrapper
-    
-    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        
+        gap: 15px;
         
     }
 
-    // .films-slider__slide
+    // .films__item
 
-    &__slide {
-        position: relative;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
 
-        & img {
-            aspect-ratio: 7/10;
-            margin-bottom: rem(7);
-            width: 100%;
+    // .films__item-image
 
-            object-fit: cover;
-            // position: absolute;
+    &__item-image {
+        flex: 0 1 auto;
+        height: 330px;
+        @include adaptiveValue('height',330,240, 1440, 320);
+        
+
+        & > img {
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 
-    // .films-slider__title
+    // .films__item-title
 
-    &__title {
-
-        font-size: rem(18);
-        font-weight: bold;
-        line-height: 120%;
-        color: #111111;
-
-        @media screen and (max-width:$tablet) {
-            font-size: rem(15);
+    &__item-title {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: "Roboto";
+        @include adaptiveValue('margin-top',15,10);
+        @media screen and (max-width:$mobile) {
+            font-size: 16px;
         }
-
     }
 }
 

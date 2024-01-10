@@ -1,0 +1,97 @@
+
+
+
+// ========================================================================================================================================================================================================================================================
+
+.film {
+
+    
+    
+    // .film__container
+
+    &__container {
+
+
+        & [class*="__container"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+	// .film__body
+
+	&__body {
+        @media screen and (min-width:$tablet) {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 320px;
+            
+            @media screen and (min-width:$tablet) and (max-width:$pc) {
+                grid-template-columns: 1fr calc(280px + 40 * ((100vw - 992px) / (1440 - 992)));
+            }
+        }
+
+        column-gap: 20px;
+
+	}
+
+    
+
+    // .film__sidebar
+
+    &__sidebar {
+        @media screen and (min-width:$tablet) {
+            grid-area: sidebar;
+            grid-column: 2;
+            grid-row: span 2;
+        }
+        border: 2px solid gray;
+        padding: 20px
+        
+    }
+}
+
+// ========================================================================================================================================================================================================================================================
+
+.videos {
+
+    @include adaptiveValue('padding-bottom',60,20);
+    
+
+    // .videos__container
+
+    &__container {
+        
+        @media screen and (max-width:$tablet) {
+            margin: 0px -20px;
+        }
+
+
+        & video {
+
+        }
+    }
+
+    &__body {
+        @media screen and (max-width:$tablet) {
+            margin: 0 20px;
+        }
+    }
+
+    &__title {
+        @include adaptiveValue('font-size',38,18);
+        margin-top: em(10);
+        margin-bottom: em(10);
+        font-weight: 600;
+        font-family: "Roboto", sans-serif;
+    }
+
+    &__decription {
+
+        font-family: "Roboto", sans-serif;
+        line-height: 120%;
+
+    }
+}
+
+// ========================================================================================================================================================================================================================================================
