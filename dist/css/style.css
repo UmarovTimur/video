@@ -496,7 +496,7 @@ h6 {
 .videos__title {
   margin-top: 0.625em;
   margin-bottom: 0.625em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
 @media (min-width: 92.5em) {
@@ -506,12 +506,12 @@ h6 {
 }
 @media (min-width: 20em) and (max-width: 92.5em) {
   .videos__title {
-    font-size: calc(1.125rem + 1.25 * (100vw - 20rem) / ((72.5)));
+    font-size: calc(1.25rem + 1.125 * (100vw - 20rem) / ((72.5)));
   }
 }
 @media (max-width: 20em) {
   .videos__title {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 .videos__decription {
@@ -2702,6 +2702,24 @@ video::-webkit-media-text-track-display {
   display: flex;
   flex-direction: column;
   align-items: start;
+  cursor: pointer;
+  transition: all 0.4s ease 0s;
+}
+@media screen and (hover: hover) {
+  .films__item:hover {
+    transform: scale(1.04);
+  }
+  .films__item:hover > .films__item-image {
+    box-shadow: 0 0 1.75rem rgba(0, 0, 0, 0.6);
+  }
+}
+@media screen and (hover: hover) and (max-width: 61.99875em) {
+  .films__item:hover > .films__item-image {
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.6);
+  }
+}
+.films__item:active {
+  transform: scale(0.96);
 }
 .films__item-image {
   flex: 0 1 auto;
@@ -2715,6 +2733,11 @@ video::-webkit-media-text-track-display {
 @media (max-width: 20em) {
   .films__item-image {
     height: 15rem;
+  }
+}
+@media screen and (hover: hover) {
+  .films__item-image {
+    transition: all 0.4s ease 0s;
   }
 }
 .films__item-image > img {

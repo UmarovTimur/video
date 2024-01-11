@@ -136,6 +136,29 @@
         display: flex;
         flex-direction: column;
         align-items: start;
+        cursor: pointer;
+        
+        transition: all .4s ease 0s;
+        
+        @media screen and (hover:hover) {
+            &:hover {
+                transform: scale(1.04);
+                & > .films__item-image {
+                    box-shadow: 0 0 rem(28) rgba(0,0,0,0.6);
+                }
+            }
+
+            @media screen and (max-width:$tablet) {
+                &:hover {
+                    & > .films__item-image {
+                        box-shadow: 0 0 rem(20) rgba(0,0,0,0.6);
+                    }
+                }
+            }
+        }
+        &:active {
+            transform: scale(0.96);
+        }
     }
 
     // .films__item-image
@@ -145,6 +168,10 @@
         height: 330px;
         @include adaptiveValue('height',330,240, 1440, 320);
         
+        @media screen and (hover:hover) {
+            transition: all .4s ease 0s;
+            
+        }
 
         & > img {
             max-width: 100%;

@@ -18,7 +18,11 @@ export function changingVideo() {
     let video = document.getElementById('mainVideoView');
 
     if (video) {
-        let current = video.querySelector('source').src;
+        let current = {
+            src:video.querySelector('source').src,
+            currentCard:"dfd"
+        }
+        findCurrentVideo(current); 
         document.addEventListener("click", function (e) {
 
             if (e.target.closest("[data-link-to-video]")) {
@@ -29,6 +33,7 @@ export function changingVideo() {
                         video.pause();
                     }
                     
+                    // Изменяем видео
                     video.src = videoSource;
                     video.type = type;
                     video.load();
@@ -36,11 +41,24 @@ export function changingVideo() {
     
                     current = videoSource;
                     gotoBlock('#mainVideoView', true);
-                        
+                    // Смена вида карточки
+                    findCurrentVideo();
+
+
+                    // Изменение текст
+                    // ...
                 }
             }
         });
     }
     
+    function findCurrentVideo(current) {
+        let videoList = [...document.querySelectorAll("[data-link-to-video]")];
 
+        for (let i in videoList) {
+            if (videoList[i].getAttribute('data-link-to-video') == current) {
+                // videoList[i].cals
+            }
+        }
+    }
 }

@@ -79,10 +79,10 @@
     }
 
     &__title {
-        @include adaptiveValue('font-size',38,18);
+        @include adaptiveValue('font-size',38,20);
         margin-top: em(10);
         margin-bottom: em(10);
-        font-weight: 600;
+        font-weight: 700;
         font-family: "Roboto", sans-serif;
     }
 
