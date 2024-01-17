@@ -123,11 +123,44 @@
     // .films__container
 
     &__container {
+    }
+
+
+    // .films__menu
+
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: rem(15);
+        margin-bottom: 20px;
+    }
+
+    // .films__link 
+
+    &__link {
+        font-family: 'Roboto';
+        color: white;
+        font-size: 22px;
+        font-weight: 600;
+        padding: em(13,21) 1.4em;
+        background-color:#B72025;
+        border-radius: em(8,18);
+
+        cursor: auto;
+    }
+
+    // .films__section
+
+    &__section {
         display: flex;
         flex-wrap: wrap;
         
         gap: 15px;
-        
+
+        &:not(:last-child) {
+            @include adaptiveValue('margin-bottom',45,25);
+            
+        }
     }
 
     // .films__item

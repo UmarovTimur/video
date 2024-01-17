@@ -17,6 +17,7 @@
                <section class="videos">
                   <div class="videos__container">
                      <video
+                        id="mainVideoView"
                         class="video-js vjs-default-skin"
                         id="my-video"
                         data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'
@@ -24,17 +25,20 @@
                         preload="auto"
                         width="100vw"
                         height="auto"
-                        poster="@img/welcome-bg.jpg"
+                        
                         data-setup="{}">
                         <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" type="video/mp4" />
-                        <p class="vjs-no-js">
-                           To view this video please <strong>enable JavaScript,</strong> and consider upgrading to a
-                           web browser that
-                           <a href="https://videojs.com/html5-video-support/" target="_blank"
-                           >supports HTML5 video</a
-                           >
-                        </p>
+
                      </video>
+                     <div class="videos__body">
+                        <h2 id="mainVideoTitle" class="videos__title">
+                           Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
+                        </h2>
+                        <p id="mainVideoDecription" class="videos__decription">
+                           Iso Masihning ILOHIY TUG'ILISHI. Yahshi kino O'zbek tilida Tarjima kinolar: 12+
+                           Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
+                        </p>
+                     </div>
                   </div>
                </section>
 

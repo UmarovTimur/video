@@ -85,25 +85,23 @@
                   id="my-video"
                   data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'
                   controls
-                  preload="auto"
+                  preload="metadate"
                   width="100vw"
                   height="auto"
-                  poster="img/welcome-bg.jpg"
                   data-setup="{}">
-                  <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" type="video/mp4" />
+                  <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4#t=6" type="video/mp4" />
                   <p class="vjs-no-js">
                      To view this video please <strong>enable JavaScript,</strong> and consider upgrading to a
                      web browser that
                      <a href="https://videojs.com/html5-video-support/" target="_blank"
-                     >supports HTML5 video</a
-                     >
+                     >supports HTML5 video</a>
                   </p>
                </video>
                <div class="videos__body">
-                  <h2 class="videos__title">
+                  <h2 id="mainVideoTitle" class="videos__title">
                      Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
                   </h2>
-                  <p class="videos__decription">
+                  <p id="mainVideoDecription" class="videos__decription">
                      Iso Masihning ILOHIY TUG'ILISHI. Yahshi kino O'zbek tilida Tarjima kinolar: 12+
                      Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
                   </p>
@@ -115,139 +113,328 @@
          <section class="films">
     <div class="films__container">
 
-       <article 
+      <div class="films__menu">
+         <button class="films__link">Mavlud</button>
+      </div>
 
-       data-video-type="video/mp4"
-       data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
-       data-title="Yahshi Uzbekcha Tarjima kino"
-       data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
-       Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+      <div class="films__section">
+         <article    
 
-       class="films__item">
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+            data-time-for-cover="6"
+               
+            class="films__item">
 
-          <div class="films__item-image">
+            <div class="films__item-image">
 
-             <img src="img/image1.webp" alt="">
+               <img src="img/films/001-Davyuraklar-uzb.webp" alt="">
 
-          </div>
+            </div>
 
-          <h4 class="films__item-title">Random Text name</h4>
+            <h4 class="films__item-title">Random Text name</h4>
 
-       </article>
-       
-       <article
-         data-video-type="video/mp4"
-         data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4"
-         data-title=""
-         data-discription=""
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/002-Inoyat-yoli-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/003-Kurashish-xonasi-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/004-Kutarilish-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/007-Masih-azoblari-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+      </div>
+
+      <div class="films__menu">
+         <button class="films__link">Iso</button>
+      </div>
+
+      <div class="films__section">
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/007-Masih-azoblari-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/003-Kurashish-xonasi-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/004-Kutarilish-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/001-Davyuraklar-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
+
+         <article    
+
+            data-video-type="video/mp4"
+            data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
+            data-title="Yahshi Uzbekcha Tarjima kino"
+            data-cover-for-video="img/image1.webp"
+            data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
+            Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
+            data-cover="img/image1.webp"
+               
+            class="films__item">
+
+            <div class="films__item-image">
+
+               <img src="img/films/002-Inoyat-yoli-uzb.webp" alt="">
+
+            </div>
+
+            <h4 class="films__item-title">Random Text name</h4>
+
+         </article>
          
-         class="films__item">
-          <div class="films__item-image">
+      </div>
 
-             <img src="img/image3.jpg" alt="">
 
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-       
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image4.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image1.webp" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image4.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image1.webp" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image1.webp" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image1.webp" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image5.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image6.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image1.webp" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-       
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image3.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
-
-       <article data-video-type="video/mp4" data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4" class="films__item">
-          <div class="films__item-image">
-
-             <img src="img/image3.jpg" alt="">
-
-          </div>
-          <h4 class="films__item-title">Random Text name</h4>
-       </article>
     </div>
  </section>
         

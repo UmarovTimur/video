@@ -17,7 +17,8 @@
 	}
 	
 	&._dark-bg {
-		background-color: rgba(000,000,000,.7);
+		background-color: #111;
+		padding: 30px 0px;
 	}
 
 	@media screen and (min-width:$tablet) {
@@ -69,6 +70,7 @@
 	// .header__menu
 
 	&__menu {
+		z-index: 30;
 		@media screen and (max-width:$tablet) {
 			position: fixed;
 			right: -100%;
@@ -132,7 +134,6 @@
 				margin-bottom: rem(20);
 			}
 		}
-
 
 
 
@@ -201,7 +202,7 @@
 		width: rem(30);
 		height: rem(18);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 35;
 		span,
 		&::before,
 		&::after {

@@ -18,36 +18,56 @@ export function changingVideo() {
     let video = document.getElementById('mainVideoView');
 
     if (video) {
-        let current = {
-            src:video.querySelector('source').src,
-            currentCard:"dfd"
-        }
-        findCurrentVideo(current); 
+        let current = video.querySelector('source').src;
+        findCurrentVideo(current);
+        
         document.addEventListener("click", function (e) {
 
             if (e.target.closest("[data-link-to-video]")) {
                 let videoSource = e.target.closest("[data-link-to-video]").getAttribute('data-link-to-video');
-                let type = e.target.closest("[data-link-to-video]").getAttribute('data-video-type');
+                let card = e.target.closest("[data-link-to-video]");
+                let type = card.getAttribute('data-video-type');
+
+                let cardTitle = card.getAttribute('data-title');
+                let cardDiscription = card.getAttribute('data-discription');
+                let cardCoverForVideo = card.getAttribute('data-cover-for-video');
+                let cardTimeForCover = card.getAttribute('data-time-for-cover');
+
+                let filmTitle = document.getElementById("mainVideoTitle");
+                let filmDiscription = document.getElementById("mainVideoDecription");
+
                 if (videoSource != current) {
                     if (!video.paused) {
                         video.pause();
                     }
-                    
-                    // Изменяем видео
-                    video.src = videoSource;
-                    video.type = type;
-                    video.load();
-                    video.play();
     
                     current = videoSource;
-                    gotoBlock('#mainVideoView', true);
+                    gotoBlock('#mainVideoView', true,500,30);
                     // Смена вида карточки
                     findCurrentVideo();
 
 
-                    // Изменение текст
+                    // Изменение текста
                     // ...
-                }
+
+                    filmTitle.textContent = cardTitle;
+                    filmDiscription.textContent = cardDiscription;
+
+                    // Изменение картинки для видео
+                    // video.poster = cardCoverForVideo;
+                    // console.log(video.querySelector("picture"))
+
+                    // vjs-poster
+   
+                    // Изменяем видео
+                    video.src = `${videoSource}#t=${cardTimeForCover}`;
+                    video.type = type;
+                    video.load();
+                    
+                    // video.play();
+                }   
+
+
             }
         });
     }
