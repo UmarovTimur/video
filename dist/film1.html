@@ -6,16 +6,16 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240118172127">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240118172127" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,800;1,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,800;1,600&display=swap&_v=20240118172127" rel="stylesheet">
 </head>
 
 <body>
@@ -67,21 +67,25 @@
 
          <div class="film__container">
             <div class="film__body">
-               <section class="videos">
+               <section class="videos _film">
                   <div class="videos__container">
-                     <video
+                     <video 
                         id="mainVideoView"
                         class="video-js vjs-default-skin"
                         id="my-video"
                         data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'
                         controls
-                        preload="auto"
+                        preload="metadate"
                         width="100vw"
                         height="auto"
-                        
                         data-setup="{}">
                         <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4" type="video/mp4" />
-
+                        <p class="vjs-no-js">
+                           To view this video please <strong>enable JavaScript,</strong> and consider upgrading to a
+                           web browser that
+                           <a href="https://videojs.com/html5-video-support/" target="_blank"
+                           >supports HTML5 video</a>
+                        </p>
                      </video>
                      <div class="videos__body">
                         <h2 id="mainVideoTitle" class="videos__title">
@@ -92,12 +96,11 @@
                            Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
                         </p>
                      </div>
+                     
                   </div>
                </section>
 
-               <aside class="film__sidebar sidebar">
-            
-               </aside>
+               <!-- <aside class="film__sidebar sidebar"></aside> -->
 
                <section class="films">
     <div class="films__container">
@@ -112,17 +115,15 @@
             data-video-type="video/mp4"
             data-link-to-video="https://fra1.digitaloceanspaces.com/video-uz/Yashirin-hayot-kino-uzb.mp4"
             data-title="Yahshi Uzbekcha Tarjima kino"
-            data-cover-for-video="img/image1.webp"
             data-discription="(Xorij kinosi, Uzbek tilida) HD. Yangi O'zbek tilida kinolar (Film Yuklab Olish) Film. Kino. Video Tarjima Kinolar O'zbek tilida kinolar yuklab olish onlayn ko'rish
             Chet el kino uzbek tilida, film Uzbek tilida Tarjima kinolar. Bepul ko`chirish. O'zbek tilida onlayn film tomosha qiling. Bepul yuklab olish"
-            data-cover="img/image1.webp"
             data-time-for-cover="6"
                
             class="films__item">
 
             <div class="films__item-image">
 
-               <img src="img/films/001-Davyuraklar-uzb.webp" alt="">
+               <picture><source srcset="img/films/001-Davyuraklar-uzb.webp" type="image/webp"><img src="img/films/001-Davyuraklar-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -144,7 +145,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/002-Inoyat-yoli-uzb.webp" alt="">
+               <picture><source srcset="img/films/002-Inoyat-yoli-uzb.webp" type="image/webp"><img src="img/films/002-Inoyat-yoli-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -166,7 +167,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/003-Kurashish-xonasi-uzb.webp" alt="">
+               <picture><source srcset="img/films/003-Kurashish-xonasi-uzb.webp" type="image/webp"><img src="img/films/003-Kurashish-xonasi-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -188,7 +189,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/004-Kutarilish-uzb.webp" alt="">
+               <picture><source srcset="img/films/004-Kutarilish-uzb.webp" type="image/webp"><img src="img/films/004-Kutarilish-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -210,7 +211,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt="">
+               <picture><source srcset="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" type="image/webp"><img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -232,7 +233,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt="">
+               <picture><source srcset="img/films/006-Kutilmagan-uchirashuv-uzb.webp" type="image/webp"><img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -254,7 +255,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/007-Masih-azoblari-uzb.webp" alt="">
+               <picture><source srcset="img/films/007-Masih-azoblari-uzb.webp" type="image/webp"><img src="img/films/007-Masih-azoblari-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -282,7 +283,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt="">
+               <picture><source srcset="img/films/006-Kutilmagan-uchirashuv-uzb.webp" type="image/webp"><img src="img/films/006-Kutilmagan-uchirashuv-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -304,7 +305,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/007-Masih-azoblari-uzb.webp" alt="">
+               <picture><source srcset="img/films/007-Masih-azoblari-uzb.webp" type="image/webp"><img src="img/films/007-Masih-azoblari-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -326,7 +327,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/003-Kurashish-xonasi-uzb.webp" alt="">
+               <picture><source srcset="img/films/003-Kurashish-xonasi-uzb.webp" type="image/webp"><img src="img/films/003-Kurashish-xonasi-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -348,7 +349,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/004-Kutarilish-uzb.webp" alt="">
+               <picture><source srcset="img/films/004-Kutarilish-uzb.webp" type="image/webp"><img src="img/films/004-Kutarilish-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -370,7 +371,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt="">
+               <picture><source srcset="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" type="image/webp"><img src="img/films/005-Kutilmagan-uchirashuv-2-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -391,7 +392,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/001-Davyuraklar-uzb.webp" alt="">
+               <picture><source srcset="img/films/001-Davyuraklar-uzb.webp" type="image/webp"><img src="img/films/001-Davyuraklar-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -413,7 +414,7 @@
 
             <div class="films__item-image">
 
-               <img src="img/films/002-Inoyat-yoli-uzb.webp" alt="">
+               <picture><source srcset="img/films/002-Inoyat-yoli-uzb.webp" type="image/webp"><img src="img/films/002-Inoyat-yoli-uzb.webp" alt=""></picture>
 
             </div>
 
@@ -478,7 +479,7 @@
 	</div>
 </footer>
    </div>
-   <script src="js/app.min.js"></script>
+   <script src="js/app.min.js?_v=20240118172127"></script>
 </body>
 
 </html>

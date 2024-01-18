@@ -140,7 +140,8 @@
     &__link {
         font-family: 'Roboto';
         color: white;
-        font-size: 22px;
+        @include adaptiveValue('font-size',21,16);
+        
         font-weight: 600;
         padding: em(13,21) 1.4em;
         background-color:#B72025;

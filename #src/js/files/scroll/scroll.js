@@ -1,6 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, getHash } from "../functions.js";
-import { flsModules } from "../../files/modules.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "./gotoblock.js";
 // Переменная контроля добавления события window scroll.
