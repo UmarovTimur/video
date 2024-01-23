@@ -1,9 +1,9 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
+import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
 import * as flsModules  from "./modules.js";
 
-import { gotoBlock } from "./scroll/gotoblock.js";
+import { gotoBlock } from "./scroll//gotoblock.js";
 
 
 function filmsTitleToContain() {
@@ -27,8 +27,6 @@ function changingVideo() {
         findCurrentVideo(current);
         
         document.addEventListener("click", function (e) {
-
-
             if (e.target.closest("[data-link-to-video]")) {
                 let videoSource = e.target.closest("[data-link-to-video]").getAttribute('data-link-to-video');
                 let card = e.target.closest("[data-link-to-video]");
@@ -89,3 +87,80 @@ function changingVideo() {
     }
 }
 changingVideo();
+
+(function getFilms() {
+    document.addEventListener("DOMContentLoaded", () => {
+        loadFilms("json/films.json");
+    });
+})();
+
+async function loadFilms(file) {
+    let response = await fetch(file, {
+        method: 'GET'
+    });
+    if(response.ok){
+        let result = await response.json();
+        parsingFilms(result);
+    }else{
+        console.log('Error in loadFilms', response.ok);
+    }
+}
+
+
+function parsingFilms(data) {
+    let filmsContainer = document.querySelector('.films__container');
+
+
+    
+    let currentFilmsSection = newFilmsSection();
+
+    data.forEach(item =>{
+
+        if (!item.description && !item.image && !item.video) {
+            filmsContainer.insertAdjacentHTML("beforeend",`
+            <div class="films__menu">
+                <button class="films__link">${item.title}</button>
+            </div>
+            `);
+            currentFilmsSection = '';
+
+            return;
+        }
+
+
+
+        let filmsTemplate = `
+        <article 
+            data-video-type="${item.videoType}"
+            data-link-to-video="${item.video}"
+            data-title="${item.title}"
+            data-discription="${item.description}"
+            data-time-for-cover="${item.videoCover}"
+            class="films__item">
+            
+                <div class="films__item-image">
+
+                    <img src="${item.image}" alt="">
+
+                </div>
+
+                <h4 class="films__item-title">${item.title}</h4>
+            </article>
+        `
+
+
+
+        if (!currentFilmsSection) {
+            currentFilmsSection = newFilmsSection();
+            filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
+        }
+        currentFilmsSection.insertAdjacentHTML("beforeend", filmsTemplate);
+    });
+
+}
+
+function newFilmsSection() {
+    let el = document.createElement('div');
+    el.classList.add("films__section");
+    return el;
+}

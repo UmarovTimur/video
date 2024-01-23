@@ -1,5 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, menuClose, getHash, FLS } from "../functions.js";
+import { menuClose, FLS } from "../functions.js";
 // Подключение дополнения для увеличения возможностей
 // Документация: https://github.com/cferdinandi/smooth-scroll
 // import SmoothScroll from 'smooth-scroll';
