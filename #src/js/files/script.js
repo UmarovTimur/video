@@ -7,16 +7,15 @@ import { gotoBlock } from "./scroll//gotoblock.js";
 
 
 function filmsTitleToContain() {
-    document.addEventListener("DOMContentLoaded", () => {
-        let items = [...document.querySelectorAll('.films__item')];
-        for (let i = 0; i < items.length; i++) {
-            let imageWidth = items[i].querySelector("img").clientWidth
+    let items = [...document.querySelectorAll('.films__item')];
+    for (let i = 0; i < items.length; i++) {
+        let image = items[i].querySelector("img");
+        image.onload = function () {
             let title = items[i].querySelector(".films__item-title");
-            title.style.maxWidth = `${imageWidth}px`;
-        }
-    });
+            title.style.maxWidth = `${image.clientWidth}px`;
+        };            
+    }
 }
-filmsTitleToContain();
 
 function changingVideo() {
 
@@ -34,8 +33,8 @@ function changingVideo() {
 
                 let cardTitle = card.getAttribute('data-title');
                 let cardDiscription = card.getAttribute('data-discription');
-                let cardCoverForVideo = card.getAttribute('data-cover-for-video');
-                let cardTimeForCover = card.getAttribute('data-time-for-cover');
+                // let cardCoverForVideo = card.getAttribute('data-cover-for-video');
+                let coverForVideo = card.getAttribute('data-time-for-cover');
 
                 let filmTitle = document.getElementById("mainVideoTitle");
                 let filmDiscription = document.getElementById("mainVideoDecription");
@@ -64,7 +63,14 @@ function changingVideo() {
                     // vjs-poster
    
                     // Изменяем видео
-                    video.src = `${videoSource}#t=${cardTimeForCover}`;
+                    if (+coverForVideo > 0) {
+                        console.log("Number");    
+                        video.src = `${videoSource}#t=${coverForVideo}`;
+                    } else {
+                        console.log("Link!!");    
+                        video.src = videoSource;
+
+                    }
                     video.type = type;
                     video.load();
                     
@@ -110,8 +116,6 @@ async function loadFilms(file) {
 function parsingFilms(data) {
     let filmsContainer = document.querySelector('.films__container');
 
-
-    
     let currentFilmsSection = newFilmsSection();
 
     data.forEach(item =>{
@@ -127,8 +131,24 @@ function parsingFilms(data) {
             return;
         }
 
+        let filmsTemplateImage = '';
+        if (item.videoType == "youtube" || item.videoType == "vimeo") {
+            filmsTemplateImage = `
+            <a href="${item.urlPage}" class="films__item-image">
 
+                <img src="${item.image}" alt="">
 
+            </a>`;
+        } else {
+            filmsTemplateImage = `
+            <div class="films__item-image">
+
+                <img src="${item.image}" alt="">
+
+            </div>`;
+        }
+
+        
         let filmsTemplate = `
         <article 
             data-video-type="${item.videoType}"
@@ -138,25 +158,25 @@ function parsingFilms(data) {
             data-time-for-cover="${item.videoCover}"
             class="films__item">
             
-                <div class="films__item-image">
+                
+                ${filmsTemplateImage}
 
-                    <img src="${item.image}" alt="">
-
-                </div>
-
-                <h4 class="films__item-title">${item.title}</h4>
+                <a target="_blank" href="${item.urlPage}" class="films__item-title">${item.title}</a>
             </article>
         `
-
-
+        let filmItem = document.createElement('div');
+        filmItem.innerHTML = filmsTemplate;
 
         if (!currentFilmsSection) {
             currentFilmsSection = newFilmsSection();
             filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
         }
-        currentFilmsSection.insertAdjacentHTML("beforeend", filmsTemplate);
+        currentFilmsSection.insertAdjacentElement("beforeend", filmItem);
     });
-
+    
+    filmsTitleToContain();
+    
+    
 }
 
 function newFilmsSection() {
@@ -164,3 +184,6 @@ function newFilmsSection() {
     el.classList.add("films__section");
     return el;
 }
+
+
+

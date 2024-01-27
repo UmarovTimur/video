@@ -20291,16 +20291,15 @@
         })), T;
     }));
     function filmsTitleToContain() {
-        document.addEventListener("DOMContentLoaded", (() => {
-            let items = [ ...document.querySelectorAll(".films__item") ];
-            for (let i = 0; i < items.length; i++) {
-                let imageWidth = items[i].querySelector("img").clientWidth;
+        let items = [ ...document.querySelectorAll(".films__item") ];
+        for (let i = 0; i < items.length; i++) {
+            let image = items[i].querySelector("img");
+            image.onload = function() {
                 let title = items[i].querySelector(".films__item-title");
-                title.style.maxWidth = `${imageWidth}px`;
-            }
-        }));
+                title.style.maxWidth = `${image.clientWidth}px`;
+            };
+        }
     }
-    filmsTitleToContain();
     function changingVideo() {
         let video = document.getElementById("mainVideoView");
         if (video) {
@@ -20313,8 +20312,7 @@
                     let type = card.getAttribute("data-video-type");
                     let cardTitle = card.getAttribute("data-title");
                     let cardDiscription = card.getAttribute("data-discription");
-                    card.getAttribute("data-cover-for-video");
-                    let cardTimeForCover = card.getAttribute("data-time-for-cover");
+                    let coverForVideo = card.getAttribute("data-time-for-cover");
                     let filmTitle = document.getElementById("mainVideoTitle");
                     let filmDiscription = document.getElementById("mainVideoDecription");
                     if (videoSource != current) {
@@ -20323,7 +20321,13 @@
                         gotoblock_gotoBlock("#mainVideoView", true, 500, 30);
                         filmTitle.textContent = cardTitle;
                         filmDiscription.textContent = cardDiscription;
-                        video.src = `${videoSource}#t=${cardTimeForCover}`;
+                        if (+coverForVideo > 0) {
+                            console.log("Number");
+                            video.src = `${videoSource}#t=${coverForVideo}`;
+                        } else {
+                            console.log("Link!!");
+                            video.src = videoSource;
+                        }
                         video.type = type;
                         video.load();
                     }
@@ -20359,13 +20363,18 @@
                 currentFilmsSection = "";
                 return;
             }
-            let filmsTemplate = `\n        <article \n            data-video-type="${item.videoType}"\n            data-link-to-video="${item.video}"\n            data-title="${item.title}"\n            data-discription="${item.description}"\n            data-time-for-cover="${item.videoCover}"\n            class="films__item">\n            \n                <div class="films__item-image">\n\n                    <img src="${item.image}" alt="">\n\n                </div>\n\n                <h4 class="films__item-title">${item.title}</h4>\n            </article>\n        `;
+            let filmsTemplateImage = "";
+            if (item.videoType == "youtube" || item.videoType == "vimeo") filmsTemplateImage = `\n            <a href="${item.urlPage}" class="films__item-image">\n\n                <img src="${item.image}" alt="">\n\n            </a>`; else filmsTemplateImage = `\n            <div class="films__item-image">\n\n                <img src="${item.image}" alt="">\n\n            </div>`;
+            let filmsTemplate = `\n        <article \n            data-video-type="${item.videoType}"\n            data-link-to-video="${item.video}"\n            data-title="${item.title}"\n            data-discription="${item.description}"\n            data-time-for-cover="${item.videoCover}"\n            class="films__item">\n            \n                \n                ${filmsTemplateImage}\n\n                <a target="_blank" href="${item.urlPage}" class="films__item-title">${item.title}</a>\n            </article>\n        `;
+            let filmItem = document.createElement("div");
+            filmItem.innerHTML = filmsTemplate;
             if (!currentFilmsSection) {
                 currentFilmsSection = newFilmsSection();
                 filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
             }
-            currentFilmsSection.insertAdjacentHTML("beforeend", filmsTemplate);
+            currentFilmsSection.insertAdjacentElement("beforeend", filmItem);
         }));
+        filmsTitleToContain();
     }
     function newFilmsSection() {
         let el = document.createElement("div");

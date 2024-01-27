@@ -7,16 +7,18 @@
       "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
       "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
       "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"video/mp4",
-      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
+      "videoType":"youtube",
+      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
     },
     {
         "title": "Iso Masihning Ilohiy Tug'ilishi",
         "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
         "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
         "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-        "videoType":"video/mp4",
-        "videoCover":2
+        "videoType":"vimeo",
+        "videoCover":2,
+        "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
 
     },
     {
@@ -25,7 +27,8 @@
       "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
       "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
       "videoType":"video/mp4",
-      "videoCover":5
+      "videoCover":5,
+      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
     },
     {
       "title": "Iso Masihning Ilohiy Tug'ilishi",
@@ -33,7 +36,8 @@
       "image": "",
       "video": "",
       "videoType":"",
-      "videoCover":""
+      "videoCover":"",
+      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
     },
     {
       "title": "Iso Masihning Ilohiy Tug'ilishi",
@@ -41,7 +45,8 @@
       "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
       "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
       "videoType":"video/mp4",
-      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
+      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
     },
     {
         "title": "Iso Masihning Ilohiy Tug'ilishi",
@@ -49,7 +54,8 @@
         "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
         "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
         "videoType":"video/mp4",
-        "videoCover":2
+        "videoCover":2,
+        "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
 
     },
     {
@@ -58,7 +64,8 @@
       "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
       "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
       "videoType":"video/mp4",
-      "videoCover":5
+      "videoCover":5,
+      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
     }
     
 ]

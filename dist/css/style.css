@@ -2631,6 +2631,7 @@ video::-webkit-media-text-track-display {
       -ms-flex-align: start;
           align-items: start;
   cursor: pointer;
+  margin-bottom: 20px;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
@@ -2645,7 +2646,7 @@ video::-webkit-media-text-track-display {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  height: 330px;
+  height: 270px;
 }
 
 .films__item-image > img {
@@ -2805,7 +2806,7 @@ video::-webkit-media-text-track-display {
   }
 
   .films__item-image {
-    height: 15rem;
+    height: 11.875rem;
   }
 
   .films__item-title {
@@ -3043,7 +3044,7 @@ video::-webkit-media-text-track-display {
 
 @media (min-width: 20em) and (max-width: 90em) {
   .films__item-image {
-    height: calc(15rem + 5.625 * (100vw - 20rem) / ((70)));
+    height: calc(11.875rem + 5 * (100vw - 20rem) / ((70)));
   }
 }
 

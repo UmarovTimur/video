@@ -171,6 +171,7 @@
         flex-direction: column;
         align-items: start;
         cursor: pointer;
+        margin-bottom: 20px;
         
         transition: all .4s ease 0s;
         
@@ -199,8 +200,8 @@
 
     &__item-image {
         flex: 0 1 auto;
-        height: 330px;
-        @include adaptiveValue('height',330,240, 1440, 320);
+        height: 270px;
+        @include adaptiveValue('height',270,190, 1440, 320);
         
         @media screen and (hover:hover) {
             transition: all .4s ease 0s;
