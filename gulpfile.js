@@ -34,6 +34,7 @@ function watcher() {
    gulp.watch(path.watch.scss, scss);
    gulp.watch(path.watch.js, js);
    gulp.watch(path.watch.images, images);
+   gulp.watch(path.watch.json, json);
 }
 
 //Последовательная обработка шрифтов

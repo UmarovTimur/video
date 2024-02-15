@@ -129,8 +129,11 @@ function parsingFilms(data) {
             currentFilmsSection = '';
 
             return;
+        } else if (!item.image) {
+            console.error(item.title, "image is undefinded");
+            return;
         }
-
+        
         let filmsTemplateImage = '';
         if (item.videoType == "youtube" || item.videoType == "vimeo") {
             filmsTemplateImage = `
@@ -148,14 +151,14 @@ function parsingFilms(data) {
             </div>`;
         }
 
-        
+        // console.log(item["video-type"]);
         let filmsTemplate = `
         <article 
-            data-video-type="${item.videoType}"
+            data-video-type="${item["video-type"]}"
             data-link-to-video="${item.video}"
             data-title="${item.title}"
             data-discription="${item.description}"
-            data-time-for-cover="${item.videoCover}"
+            data-time-for-cover="${item["video-cover"]}"
             class="films__item">
             
                 
