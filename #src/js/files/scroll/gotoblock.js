@@ -2,11 +2,11 @@
 import { menuClose, FLS } from "../functions.js";
 // Подключение дополнения для увеличения возможностей
 // Документация: https://github.com/cferdinandi/smooth-scroll
-// import SmoothScroll from 'smooth-scroll';
+import SmoothScroll from 'smooth-scroll';
 //==============================================================================================================================================================================================================================================================================================================================
 
 // Модуль плавной проктутки к блоку
-export let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+export let gotoBlock = (targetBlock, noHeader = false, speed, offsetTop = 0) => {
 	const targetBlockElement = document.querySelector(targetBlock);
 	if (targetBlockElement) {
 		let headerItem = '';
@@ -38,7 +38,7 @@ export let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 
 
 		if (typeof SmoothScroll !== 'undefined') {
 			// Прокрутка с использованием дополнения
-			new SmoothScroll().animateScroll(targetBlockElement, '', options);
+			new SmoothScroll().animateScroll(targetBlockElement,'', options);
 		} else {
 			// Прокрутка стандартными средствами
 			let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;

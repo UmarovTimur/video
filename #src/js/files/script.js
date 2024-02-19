@@ -43,15 +43,18 @@ function changingVideo() {
                     if (!video.paused) {
                         video.pause();
                     }
+
     
                     current = videoSource;
-                    gotoBlock('#mainVideoView', true,500,30);
+                
                     // Смена вида карточки
                     // findCurrentVideo(current);
 
 
                     // Изменение текста
                     // ...
+
+
 
                     filmTitle.textContent = cardTitle;
                     filmDiscription.textContent = cardDiscription;
@@ -61,7 +64,7 @@ function changingVideo() {
                     // console.log(video.querySelector("picture"))
 
                     // vjs-poster
-   
+    
                     // Изменяем видео
                     if (+coverForVideo > 0) {
                         console.log("Number");    
@@ -69,10 +72,12 @@ function changingVideo() {
                     } else {
                         console.log("Link!!");    
                         video.src = videoSource;
-
                     }
                     video.type = type;
                     video.load();
+                    
+                    gotoBlock('#mainVideoView', false,500,document.querySelector("header.header").clientHeight + 10);
+     
                     
                     // video.play();
                 }   
