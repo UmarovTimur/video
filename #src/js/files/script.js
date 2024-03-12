@@ -1,7 +1,7 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
-import * as flsModules  from "./modules.js";
+import * as flsModules from "./modules.js";
 
 import { gotoBlock } from "./scroll//gotoblock.js";
 
@@ -13,7 +13,7 @@ function filmsTitleToContain() {
         image.onload = function () {
             let title = items[i].querySelector(".films__item-title");
             title.style.maxWidth = `${image.clientWidth}px`;
-        };            
+        };
     }
 }
 
@@ -24,7 +24,7 @@ function changingVideo() {
     if (video) {
         let current = video.querySelector('source').src;
         findCurrentVideo(current);
-        
+
         document.addEventListener("click", function (e) {
             if (e.target.closest("[data-link-to-video]")) {
                 let videoSource = e.target.closest("[data-link-to-video]").getAttribute('data-link-to-video');
@@ -44,9 +44,9 @@ function changingVideo() {
                         video.pause();
                     }
 
-    
+
                     current = videoSource;
-                
+
                     // Смена вида карточки
                     // findCurrentVideo(current);
 
@@ -64,29 +64,29 @@ function changingVideo() {
                     // console.log(video.querySelector("picture"))
 
                     // vjs-poster
-    
+
                     // Изменяем видео
                     if (+coverForVideo > 0) {
-                        console.log("Number");    
+                        console.log("Number");
                         video.src = `${videoSource}#t=${coverForVideo}`;
                     } else {
-                        console.log("Link!!");    
+                        console.log("Link!!");
                         video.src = videoSource;
                     }
                     video.type = type;
                     video.load();
-                    
-                    gotoBlock('#mainVideoView', false,500,document.querySelector("header.header").clientHeight + 10);
-     
-                    
+
+                    gotoBlock('#mainVideoView', false, 500, document.querySelector("header.header").clientHeight + 10);
+
+
                     // video.play();
-                }   
+                }
 
 
             }
         });
     }
-    
+
     function findCurrentVideo(current) {
         let videoList = [...document.querySelectorAll("[data-link-to-video]")];
 
@@ -109,10 +109,11 @@ async function loadFilms(file) {
     let response = await fetch(file, {
         method: 'GET'
     });
-    if(response.ok){
+    if (response.ok) {
         let result = await response.json();
         parsingFilms(result);
-    }else{
+        sidebarParsingFilms(result);
+    } else {
         console.log('Error in loadFilms', response.ok);
     }
 }
@@ -121,12 +122,12 @@ async function loadFilms(file) {
 function parsingFilms(data) {
     let filmsContainer = document.querySelector('.films__container');
 
-    let currentFilmsSection = newFilmsSection();
+    let currentFilmsSection = newFilmsSection("films__section");
 
-    data.forEach(item =>{
+    data.forEach(item => {
 
         if (!item.description && !item.image && !item.video) {
-            filmsContainer.insertAdjacentHTML("beforeend",`
+            filmsContainer.insertAdjacentHTML("beforeend", `
             <div class="films__menu">
                 <button class="films__link">${item.title}</button>
             </div>
@@ -138,7 +139,7 @@ function parsingFilms(data) {
             console.error(item.title, "image is undefinded");
             return;
         }
-        
+
         let filmsTemplateImage = '';
         if (item.videoType == "youtube" || item.videoType == "vimeo") {
             filmsTemplateImage = `
@@ -176,20 +177,66 @@ function parsingFilms(data) {
         filmItem.innerHTML = filmsTemplate;
 
         if (!currentFilmsSection) {
-            currentFilmsSection = newFilmsSection();
+            currentFilmsSection = newFilmsSection("films__section");
             filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
         }
         currentFilmsSection.insertAdjacentElement("beforeend", filmItem);
     });
-    
+
     filmsTitleToContain();
-    
-    
+
+
 }
 
-function newFilmsSection() {
+function sidebarParsingFilms(data) {
+    let filmsContainer = document.querySelector('.sidebar');
+
+    data.forEach(item => {
+        let currentFilmsSection = newFilmsSection("sidebar__item");
+
+        if (!item.title || !item.image) {
+            console.error(item.title, "item is undefinded [SIDEBAR ITEM]");
+            return;
+        } else if (!item.title) {
+            console.error(item.title, "image is undefinded [SIDEBAR ITEM]");
+            return;
+        }
+
+
+        if (item.videoType == "youtube" || item.videoType == "vimeo") {
+            var sideFilmStart = `<a href="${item.urlPage}" class="sidebar__item-content">`
+            var sideFilmEnd = `</a>`
+        } else {
+            var sideFilmStart = `<div
+        data-video-type="${item["video-type"]}"
+        data-link-to-video="${item.video}"
+        data-title="${item.title}"
+        data-discription="${item.description}"
+        data-time-for-cover="${item["video-cover"]}"
+        data class="sidebar__item-content">`
+            var sideFilmEnd = `</div>`
+        }
+
+        let sideFilmTemplate = `
+        ${sideFilmStart}
+        <div class="sidebar__item-image">
+            <img src="${item.image}" alt="" class="">
+        </div>
+        <p class="sidebar__item-title">
+            ${item.title}
+        </p>
+        ${sideFilmEnd}
+    `;
+
+        currentFilmsSection.insertAdjacentHTML("beforeend", sideFilmTemplate);
+        filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
+
+    });
+}
+
+function newFilmsSection(selector) {
     let el = document.createElement('div');
-    el.classList.add("films__section");
+    el.classList.add(selector);
     return el;
 }
 

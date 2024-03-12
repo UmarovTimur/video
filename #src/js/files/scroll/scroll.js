@@ -222,7 +222,7 @@ export function parralaxBackground() {
 		if (document.body.clientWidth > 992) {
 			document.addEventListener('windowScroll', function (e) {
 				const scrollTop = window.scrollY;
-				document.querySelector(".welcome__background-image").style.top = `${Math.floor(scrollTop/2)}px`;
+				document.querySelector(".welcome__background-image").style.top = `${Math.floor(scrollTop / 2)}px`;
 			})
 		}
 	}

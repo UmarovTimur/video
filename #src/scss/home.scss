@@ -1,3 +1,104 @@
+.page {
+
+    // .page__content
+
+    &__container {
+
+        @media screen and (min-width:$tablet) {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            column-gap: 20px;
+            grid-template-rows: minmax(200px, auto) auto;
+        }
+
+        @media screen and (max-width:$tablet) {
+            display: grid;
+            column-gap: 15px;
+            grid-template-columns: 1fr 270px;
+            grid-template-rows: minmax(200px, auto) auto;
+        }
+
+        @media screen and (max-width:$mobile) {
+            display: inline-block;
+        }
+    }
+}
+
+// ========================================================================================================================================================================================================================================================
+
+.sidebar {
+
+
+    grid-row: 2 span;
+    margin-bottom: 20px;
+
+    @media screen and (max-width:$mobile) {
+        display: none;
+    }
+
+    // .sidebar__item
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width:$tablet) {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    // .sidebar__item-content
+
+    &__item-content {
+
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        // border: 1px solid var(--dark);
+        // background-color: var(--dark);
+        // box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+        background-color: #eeeeee;
+        padding-right: 10px;
+
+        transition: all .5s ease 0s;
+
+        @media screen and (hover:hover) {
+            &:hover {
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    // .sidebar__item-image
+
+    &__item-image {
+        // flex: 0 0 50px;
+        @include adaptiveValue('flex-basis', 50, 30);
+
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    // .sidebar__item-title
+
+    &__item-title {
+        font-family: "Roboto", sans-serif;
+
+        @media screen and (max-width:$tablet) {
+            font-size: 14px;
+        }
+    }
+}
+
+
 // ========================================================================================================================================================================================================================================================
 
 .welcome {
@@ -5,14 +106,14 @@
     // height: 100vh;
     // transition: all .4s ease 0s; 
     height: calc(var(--vh, 1vh) * 100);
-    @include adaptiveValue('margin-bottom',60,20);
+    @include adaptiveValue('margin-bottom', 60, 20);
 
 
     position: relative;
 
     min-height: 500px;
     overflow: hidden;
-    
+
     // .welcome__container
 
     &__container {
@@ -28,19 +129,19 @@
 
     &__title {
         color: var(--white);
-        @include adaptiveValue('max-width',700,500,1440,991.8);
-        @include adaptiveValue('margin-bottom',30,15);
+        @include adaptiveValue('max-width', 700, 500, 1440, 991.8);
+        @include adaptiveValue('margin-bottom', 30, 15);
         max-width: rem(700);
-        
+
         line-height: 120%;
-        @include adaptiveValue('font-size',57,36);
+        @include adaptiveValue('font-size', 57, 36);
     }
 
     // .welcome__subtitle
 
     &__subtitle {
         color: var(--white);
-        @include adaptiveValue('max-width',500,400,1440,991.8);
+        @include adaptiveValue('max-width', 500, 400, 1440, 991.8);
         max-width: rem(500);
 
         opacity: .8;
@@ -60,7 +161,7 @@
         // position: absolute;
         width: 100%;
         height: 100%;
-        
+
 
         & img {
             position: absolute;
@@ -71,14 +172,15 @@
 
 
             object-fit: fill;
+
             @media screen and (min-aspect-ratio: 10/8) {
                 object-fit: cover;
             }
         }
-        
+
         @media screen and (max-width:$tablet) {
             &>img:last-child {
-                display: none; 
+                display: none;
             }
 
             &::after {
@@ -117,12 +219,13 @@
 
 .films {
 
-    @include adaptiveValue('margin-bottom',60,20);
+    @include adaptiveValue('margin-bottom', 60, 20);
 
 
     // .films__container
 
     &__container {
+        padding: 0px !important;
     }
 
 
@@ -140,12 +243,12 @@
     &__link {
         font-family: 'Roboto';
         color: var(--dark);
-        @include adaptiveValue('font-size',26,18);
-        
+        @include adaptiveValue('font-size', 26, 18);
+
         font-weight: 600;
         // padding: em(13,21) 1.4em;
         // background-color:#B72025;
-        border-radius: em(8,18);
+        border-radius: em(8, 18);
 
         cursor: auto;
     }
@@ -155,12 +258,12 @@
     &__section {
         display: flex;
         flex-wrap: wrap;
-        
+
         gap: 15px;
 
         &:not(:last-child) {
-            @include adaptiveValue('margin-bottom',45,25);
-            
+            @include adaptiveValue('margin-bottom', 45, 25);
+
         }
     }
 
@@ -172,25 +275,27 @@
         align-items: start;
         cursor: pointer;
         margin-bottom: 20px;
-        
+
         transition: all .4s ease 0s;
-        
+
         @media screen and (hover:hover) {
             &:hover {
                 transform: scale(1.04);
-                & > .films__item-image {
-                    box-shadow: 0 0 rem(28) rgba(0,0,0,0.6);
+
+                &>.films__item-image {
+                    box-shadow: 0 0 rem(28) rgba(0, 0, 0, 0.6);
                 }
             }
 
             @media screen and (max-width:$tablet) {
                 &:hover {
-                    & > .films__item-image {
-                        box-shadow: 0 0 rem(20) rgba(0,0,0,0.6);
+                    &>.films__item-image {
+                        box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.6);
                     }
                 }
             }
         }
+
         &:active {
             transform: scale(0.96);
         }
@@ -200,15 +305,14 @@
 
     &__item-image {
         flex: 0 1 auto;
-        height: 270px;
-        @include adaptiveValue('height',270,190, 1440, 320);
-        
+        height: 225px;
+        @include adaptiveValue('height', 225, 150, 1440, 320);
+
         @media screen and (hover:hover) {
             transition: all .4s ease 0s;
-            
         }
 
-        & > img {
+        &>img {
             max-width: 100%;
             max-height: 100%;
         }
@@ -217,11 +321,12 @@
     // .films__item-title
 
     &__item-title {
-        @include adaptiveValue('font-size',18,14);
-        
+        @include adaptiveValue('font-size', 18, 14);
+
         // font-weight: 600;
         font-family: "Roboto";
-        @include adaptiveValue('margin-top',15,10);
+        @include adaptiveValue('margin-top', 15, 10);
+
         @media screen and (max-width:$mobile) {
             font-size: 16px;
         }

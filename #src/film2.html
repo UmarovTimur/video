@@ -8,7 +8,7 @@
 <body>
    <div class="wrapper">
       @@include('html/_header.html',{
-         "class":"_dark-bg"
+      "class":"_dark-bg"
       })
       <main class="film">
 
@@ -16,7 +16,11 @@
             <div class="film__body">
                <section class="videos _film">
                   <div class="videos__container">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eGqQKmvN8T0?si=dHFoaDo8HX1KURin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/eGqQKmvN8T0?si=dHFoaDo8HX1KURin" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                      <div class="videos__body">
                         <h2 id="mainVideoTitle" class="videos__title">
                            Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
@@ -26,21 +30,21 @@
                            Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
                         </p>
                      </div>
-                     
+
                   </div>
                </section>
 
-               <!-- <aside class="film__sidebar sidebar"></aside> -->
+               <aside class="film__sidebar sidebar"></aside>
 
                @@include('html/_films.html', {})
 
                <!-- Весь остальной конетент вставлять сюда -->
-               
+
             </div>
-            
+
          </div>
-         
-         
+
+
 
       </main>
       @@include('html/_footer.html',{})

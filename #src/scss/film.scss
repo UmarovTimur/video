@@ -1,12 +1,9 @@
-
-
-
 // ========================================================================================================================================================================================================================================================
 
 .film {
 
-    
-    
+
+
     // .film__container
 
     &__container {
@@ -18,62 +15,64 @@
         }
     }
 
-	// .film__body
+    // .film__body
 
-	&__body {
-        // @media screen and (min-width:$tablet) {
-        //     display: grid;
-        //     grid-auto-flow: column;
-        //     grid-template-columns: 1fr 320px;
-            
-        //     @media screen and (min-width:$tablet) and (max-width:$pc) {
-        //         grid-template-columns: 1fr calc(280px + 40 * ((100vw - 992px) / (1440 - 992)));
-        //     }
-        // }
+    &__body {
+        @media screen and (min-width:$tablet) {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 320px;
 
-        // column-gap: 20px;
+            @media screen and (min-width:$tablet) and (max-width:$pc) {
+                grid-template-columns: 1fr calc(280px + 40 * ((100vw - 992px) / (1440 - 992)));
+            }
+        }
 
-	}
+        column-gap: 20px;
 
-    
+    }
+
+
 
     // .film__sidebar
 
     &__sidebar {
-        // @media screen and (min-width:$tablet) {
-        //     grid-area: sidebar;
-        //     grid-column: 2;
-        //     grid-row: span 2;
+        @media screen and (min-width:$tablet) {
+            grid-area: sidebar;
+            grid-column: 2;
+            grid-row: span 2;
 
-        // }
-        // margin-bottom: 20px;
-        // border: 2px solid gray;
-        // padding: 20px
-        
+        }
+
+        margin-bottom: 20px;
+        border: 2px solid gray;
+        padding: 20px
     }
 }
 
 // ========================================================================================================================================================================================================================================================
 
 .videos {
+    align-self: start;
+    @include adaptiveValue('padding-bottom', 60, 20);
 
-    @include adaptiveValue('padding-bottom',60,20);
-    
     &._film {
         @media screen and (min-width:$pc) {
             // @include adaptiveValue('padding-right',320,1,1920,1440);
             padding-right: 240px;
-            
+
         }
     }
 
     // .videos__container
 
     &__container {
-        
-        @media screen and (max-width:$tablet) {
+
+        @media screen and (max-width:$mobile) {
             margin: 0px -20px;
         }
+
+        padding: 0px !important;
 
 
         & iframe {
@@ -83,13 +82,13 @@
     }
 
     &__body {
-        @media screen and (max-width:$tablet) {
+        @media screen and (max-width:$mobile) {
             margin: 0 20px;
         }
     }
 
     &__title {
-        @include adaptiveValue('font-size',38,20);
+        @include adaptiveValue('font-size', 38, 20);
         margin-top: em(10);
         margin-bottom: em(10);
         font-weight: 700;
