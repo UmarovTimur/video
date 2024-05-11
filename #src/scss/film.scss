@@ -44,9 +44,13 @@
 
         }
 
-        margin-bottom: 20px;
-        border: 2px solid gray;
-        padding: 20px
+        @media screen and (max-width:$tablet) {
+            display: none;
+        }
+
+        // margin-bottom: 20px;
+        // border: 2px solid gray;
+        // padding: 20px
     }
 }
 
@@ -58,8 +62,12 @@
 
     &._film {
         @media screen and (min-width:$pc) {
+
             // @include adaptiveValue('padding-right',320,1,1920,1440);
-            padding-right: 240px;
+            // padding-right: 240px;
+            & iframe {
+                aspect-ratio: 16 / 9;
+            }
 
         }
     }

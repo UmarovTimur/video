@@ -105,7 +105,7 @@
     width: 100vw;
     // height: 100vh;
     // transition: all .4s ease 0s; 
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 65);
     @include adaptiveValue('margin-bottom', 60, 20);
 
 

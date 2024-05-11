@@ -2,7 +2,7 @@
 <html lang="en">
 
 @@include('html/_head.html',{
-"title":"Film name"
+"title":"Kinolar uzbek tilida"
 })
 
 <body>
@@ -11,47 +11,29 @@
       "class":"_dark-bg"
       })
       <main class="film">
-
-         <div class="film__container">
-            <div class="film__body">
-               <section class="videos _film">
-                  <div class="videos__container">
-                     <video id="mainVideoView" class="video-js vjs-default-skin" id="my-video"
-                        data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }' controls preload="metadate"
-                        width="100vw" height="auto" data-setup="{}">
-                        <source src="https://fra1.digitaloceanspaces.com/video-uz/013-Xudo-ulmagan-uzb.mp4"
-                           type="video/mp4" />
-                        <p class="vjs-no-js">
-                           To view this video please <strong>enable JavaScript,</strong> and consider upgrading to a
-                           web browser that
-                           <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                        </p>
-                     </video>
-                     <div class="videos__body">
-                        <h2 id="mainVideoTitle" class="videos__title">
-                           Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
-                        </h2>
-                        <p id="mainVideoDecription" class="videos__decription">
-                           Iso Masihning ILOHIY TUG'ILISHI. Yahshi kino O'zbek tilida Tarjima kinolar: 12+
-                           Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
-                        </p>
-                     </div>
-
+         <div class="page__container">
+            <section class="videos">
+               <div class="videos__container">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eGqQKmvN8T0?si=dHFoaDo8HX1KURin"
+                     title="YouTube video player" frameborder="0"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                     allowfullscreen></iframe>
+                  <div class="videos__body">
+                     <h2 id="mainVideoTitle" class="videos__title">
+                        Iso Masihning Ilohiy Tug'ilishi. O'zbek tilida tarjima kino
+                     </h2>
+                     <p id="mainVideoDecription" class="videos__decription">
+                        Iso Masihning ILOHIY TUG'ILISHI. Yahshi kino O'zbek tilida Tarjima kinolar: 12+
+                        Originalda: Рождение Иисуса Христа. The Nativity Story - кино фильм на Узбекском языке
+                     </p>
                   </div>
-               </section>
 
-               <aside class="film__sidebar sidebar"></aside>
-
-               @@include('html/_films.html', {})
-
-               <!-- Весь остальной конетент вставлять сюда -->
-
-            </div>
-
+               </div>
+            </section>
+            <aside class="sidebar">
+            </aside>
+            @@include('html/_films.html', {})
          </div>
-
-
-
       </main>
       @@include('html/_footer.html',{})
    </div>

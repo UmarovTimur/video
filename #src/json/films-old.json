@@ -1,69 +1,53 @@
 [
-    {
-      "title":"Iso"
-    },
-    {
-      "title": "Youtube",
-      "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-      "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"youtube",
-      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "urlPage":"./film1.html"
-    },
-    {
-      "title": "Vimeo",
-      "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-      "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"vimeo",
-      "videoCover":2,
-      "urlPage":"./film2.html"
-    },
-    {
-      "title": "Iso Masihning Ilohiy Tug'ilishi",
-      "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-      "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"video/mp4",
-      "videoCover":5,
-      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
-    },
-    {
-      "title": "Iso Masihning Ilohiy Tug'ilishi",
-      "description": "",
-      "image": "",
-      "video": "",
-      "videoType":"",
-      "videoCover":"",
-      "urlPage":""
-    },
-    {
-      "title": "Iso Masihning Ilohiy Tug'ilishi",
-      "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-      "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"video/mp4",
-      "videoCover":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
-    },
-    {
-        "title": "Iso Masihning Ilohiy Tug'ilishi",
-        "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-        "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-        "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-        "videoType":"video/mp4",
-        "videoCover":194,
-        "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
-    },
-    {
-      "title": "Iso Masihning Ilohiy Tug'ilishi",
-      "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
-      "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
-      "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
-      "videoType":"video/mp4",
-      "videoCover":5,
-      "urlPage":"https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
-    }
-    
+  {
+    "title": "Загаловок"
+  },
+  {
+    "title": "Youtube",
+    "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
+    "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "video": "",
+    "video-type": "youtube",
+    "video-cover": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "urlPage": "./film1.html"
+  },
+  {
+    "title": "Vimeo",
+    "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
+    "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "video": "",
+    "video-type": "vimeo",
+    "video-cover": 2,
+    "urlPage": "./film2.html"
+  },
+  {
+    "title": "video/mp4",
+    "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
+    "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
+    "video-type": "video/mp4",
+    "video-cover": 5,
+    "urlPage": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg"
+  },
+  {
+    "title": "Загаловок 2"
+  },
+  {
+    "title": "Превью с таймкодом",
+    "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
+    "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
+    "video-type": "video/mp4",
+    "video-cover": 1232,
+    "urlPage": ""
+  },
+  {
+    "title": "Превью с картинкой",
+    "description": "O'z onasini topishga qaror qilgan va uni kasalxonada qoldirgan qiz haqida nasroniy filmi.",
+    "image": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "video": "https://fra1.digitaloceanspaces.com/video-uz/Iso-Masihning-tugilishi-kino.mp4",
+    "video-type": "video/mp4",
+    "video-cover": "https://www.kitobook.com/web/video/images/f/24-Iso-Masihning-tugilishi-kino2.jpg",
+    "urlPage": ""
+  }
 ]

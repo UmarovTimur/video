@@ -262,12 +262,6 @@ h6 {
           column-gap: 20px;
 }
 
-.film__sidebar {
-  margin-bottom: 20px;
-  border: 2px solid gray;
-  padding: 20px;
-}
-
 .videos {
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
@@ -2590,7 +2584,7 @@ video::-webkit-media-text-track-display {
 
 .welcome {
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 65);
   position: relative;
   min-height: 500px;
   overflow: hidden;
@@ -2840,8 +2834,8 @@ video::-webkit-media-text-track-display {
 }
 
 @media screen and (min-width: 92.5em) {
-  .videos._film {
-    padding-right: 240px;
+  .videos._film iframe {
+    aspect-ratio: 16/9;
   }
 }
 
@@ -2946,8 +2940,12 @@ video::-webkit-media-text-track-display {
     margin-bottom: 1.25rem;
   }
 
+  .film__sidebar {
+    display: none;
+  }
+
   .film {
-    padding-top: 69px;
+    padding-top: 80px;
   }
 
   .page__container {

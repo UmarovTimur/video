@@ -1,8 +1,3 @@
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile, FLS } from "./functions.js";
-// Подключение списка активных модулей
-import * as flsModules from "./modules.js";
-
 import { gotoBlock } from "./scroll//gotoblock.js";
 
 
@@ -99,11 +94,13 @@ function changingVideo() {
 }
 changingVideo();
 
-(function getFilms() {
+export default function StartGetingFilms() {
     document.addEventListener("DOMContentLoaded", () => {
         loadFilms("json/films.json");
     });
-})();
+};
+
+StartGetingFilms();
 
 async function loadFilms(file) {
     let response = await fetch(file, {
@@ -112,7 +109,7 @@ async function loadFilms(file) {
     if (response.ok) {
         let result = await response.json();
         parsingFilms(result);
-        sidebarParsingFilms(result);
+        if (window.innerWidth > 767.98) sidebarParsingFilms(result);
     } else {
         console.log('Error in loadFilms', response.ok);
     }
@@ -126,51 +123,49 @@ function parsingFilms(data) {
 
     data.forEach(item => {
 
-        if (!item.description && !item.image && !item.video) {
+        // Создание заголовка категории
+        if (!item["description"] && !item["image"] && !item['video']) {
             filmsContainer.insertAdjacentHTML("beforeend", `
             <div class="films__menu">
-                <button class="films__link">${item.title}</button>
+                <button class="films__link">${item["title"]}</button>
             </div>
             `);
             currentFilmsSection = '';
 
             return;
-        } else if (!item.image) {
-            console.error(item.title, "image is undefinded");
+        } else if (!item["image"]) {
             return;
         }
 
-        let filmsTemplateImage = '';
-        if (item.videoType == "youtube" || item.videoType == "vimeo") {
+        let filmsTemplateImage = ``;
+        if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") {
             filmsTemplateImage = `
             <a href="${item.urlPage}" class="films__item-image">
 
-                <img src="${item.image}" alt="">
+                <img src="${item["image"]}" alt="">
 
             </a>`;
         } else {
             filmsTemplateImage = `
             <div class="films__item-image">
 
-                <img src="${item.image}" alt="">
+                <img src="${item["image"]}" alt="">
 
             </div>`;
         }
-
-        // console.log(item["video-type"]);
         let filmsTemplate = `
         <article 
             data-video-type="${item["video-type"]}"
-            data-link-to-video="${item.video}"
-            data-title="${item.title}"
-            data-discription="${item.description}"
+            data-link-to-video="${item["video"]}"
+            data-title="${item["title"]}"
+            data-discription="${item["description"]}"
             data-time-for-cover="${item["video-cover"]}"
             class="films__item">
             
                 
                 ${filmsTemplateImage}
 
-                <a target="_blank" href="${item.urlPage}" class="films__item-title">${item.title}</a>
+                <a target="_blank" href="${item["urlPage"]}" class="films__item-title">${item["title"]}</a>
             </article>
         `
         let filmItem = document.createElement('div');
@@ -192,38 +187,50 @@ function sidebarParsingFilms(data) {
     let filmsContainer = document.querySelector('.sidebar');
 
     data.forEach(item => {
-        let currentFilmsSection = newFilmsSection("sidebar__item");
+        let currentFilmsSection;
 
-        if (!item.title || !item.image) {
-            console.error(item.title, "item is undefinded [SIDEBAR ITEM]");
+        if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") {
+            currentFilmsSection = document.createElement('a');
+            currentFilmsSection.style.display = 'inline-block';
+            currentFilmsSection.setAttribute('href', item['urlPage']);
+        } else {
+            currentFilmsSection = document.createElement('div')
+        }
+
+
+        currentFilmsSection.classList.add('sidebar__item');
+
+
+        if (!item['title'] || !item['image']) {
+            console.error(item['title'], "item is undefinded [SIDEBAR ITEM]");
             return;
-        } else if (!item.title) {
-            console.error(item.title, "image is undefinded [SIDEBAR ITEM]");
+        } else if (!item['title']) {
+            console.error(item['title'], "image is undefinded [SIDEBAR ITEM]");
             return;
         }
 
 
-        if (item.videoType == "youtube" || item.videoType == "vimeo") {
-            var sideFilmStart = `<a href="${item.urlPage}" class="sidebar__item-content">`
+        if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") {
+            var sideFilmStart = `<a href="${item['urlPage']}" class="sidebar__item-content">`
             var sideFilmEnd = `</a>`
         } else {
             var sideFilmStart = `<div
-        data-video-type="${item["video-type"]}"
-        data-link-to-video="${item.video}"
-        data-title="${item.title}"
-        data-discription="${item.description}"
-        data-time-for-cover="${item["video-cover"]}"
-        data class="sidebar__item-content">`
+            data-video-type="${item["video-type"]}"
+            data-link-to-video="${item['video']}"
+            data-title="${item['title']}"
+            data-discription="${item['description']}"
+            data-time-for-cover="${item["video-cover"]}"
+            data class="sidebar__item-content">`
             var sideFilmEnd = `</div>`
         }
 
         let sideFilmTemplate = `
         ${sideFilmStart}
         <div class="sidebar__item-image">
-            <img src="${item.image}" alt="" class="">
+            <img src="${item['image']}" alt="" class="">
         </div>
         <p class="sidebar__item-title">
-            ${item.title}
+            ${item['title']}
         </p>
         ${sideFilmEnd}
     `;

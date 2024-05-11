@@ -193,7 +193,6 @@
     })();
     (() => {
         "use strict";
-        const flsModules = {};
         function isWebp() {
             function testWebP(callback) {
                 let webP = new Image;
@@ -371,76 +370,6 @@
                 }));
             }
         }), 0);
-        class Parallax {
-            constructor(elements) {
-                if (elements.length) this.elements = Array.from(elements).map((el => new Parallax.Each(el, this.options)));
-            }
-            destroyEvents() {
-                this.elements.forEach((el => {
-                    el.destroyEvents();
-                }));
-            }
-            setEvents() {
-                this.elements.forEach((el => {
-                    el.setEvents();
-                }));
-            }
-        }
-        Parallax.Each = class {
-            constructor(parent) {
-                this.parent = parent;
-                this.elements = this.parent.querySelectorAll("[data-prlx]");
-                this.animation = this.animationFrame.bind(this);
-                this.offset = 0;
-                this.value = 0;
-                this.smooth = parent.dataset.smooth ? Number(parent.dataset.smooth) : 15;
-                this.setEvents();
-            }
-            setEvents() {
-                this.animationID = window.requestAnimationFrame(this.animation);
-            }
-            destroyEvents() {
-                window.cancelAnimationFrame(this.animationID);
-            }
-            animationFrame() {
-                const topToWindow = this.parent.getBoundingClientRect().top;
-                const heightParent = this.parent.offsetHeight;
-                const heightWindow = window.innerHeight;
-                const positionParent = {
-                    top: topToWindow - heightWindow,
-                    bottom: topToWindow + heightParent
-                };
-                const centerPoint = this.parent.dataset.center ? this.parent.dataset.center : "center";
-                if (positionParent.top < 30 && positionParent.bottom > -30) switch (centerPoint) {
-                  case "top":
-                    this.offset = -1 * topToWindow;
-                    break;
-
-                  case "center":
-                    this.offset = heightWindow / 2 - (topToWindow + heightParent / 2);
-                    break;
-
-                  case "bottom":
-                    this.offset = heightWindow - (topToWindow + heightParent);
-                    break;
-                }
-                this.value += (this.offset - this.value) / this.smooth;
-                this.animationID = window.requestAnimationFrame(this.animation);
-                this.elements.forEach((el => {
-                    const parameters = {
-                        axis: el.dataset.axis ? el.dataset.axis : "v",
-                        direction: el.dataset.direction ? el.dataset.direction + "1" : "-1",
-                        coefficient: el.dataset.coefficient ? Number(el.dataset.coefficient) : 5,
-                        additionalProperties: el.dataset.properties ? el.dataset.properties : ""
-                    };
-                    this.parameters(el, parameters);
-                }));
-            }
-            parameters(el, parameters) {
-                if (parameters.axis == "v") el.style.transform = `translate3D(0, ${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0) ${parameters.additionalProperties}`; else if (parameters.axis == "h") el.style.transform = `translate3D(${(parameters.direction * (this.value / parameters.coefficient)).toFixed(2)}px,0,0) ${parameters.additionalProperties}`;
-            }
-        };
-        if (document.querySelectorAll("[data-prlx-parent]")) flsModules.parallax = new Parallax(document.querySelectorAll("[data-prlx-parent]"));
         /**
  * @license
  * Video.js 8.6.1 <http://videojs.com/>
@@ -20605,11 +20534,12 @@
             }
         }
         changingVideo();
-        (function getFilms() {
+        function StartGetingFilms() {
             document.addEventListener("DOMContentLoaded", (() => {
                 loadFilms("json/films.json");
             }));
-        })();
+        }
+        StartGetingFilms();
         async function loadFilms(file) {
             let response = await fetch(file, {
                 method: "GET"
@@ -20617,24 +20547,21 @@
             if (response.ok) {
                 let result = await response.json();
                 parsingFilms(result);
-                sidebarParsingFilms(result);
+                if (window.innerWidth > 767.98) sidebarParsingFilms(result);
             } else console.log("Error in loadFilms", response.ok);
         }
         function parsingFilms(data) {
             let filmsContainer = document.querySelector(".films__container");
             let currentFilmsSection = newFilmsSection("films__section");
             data.forEach((item => {
-                if (!item.description && !item.image && !item.video) {
-                    filmsContainer.insertAdjacentHTML("beforeend", `\n            <div class="films__menu">\n                <button class="films__link">${item.title}</button>\n            </div>\n            `);
+                if (!item["description"] && !item["image"] && !item["video"]) {
+                    filmsContainer.insertAdjacentHTML("beforeend", `\n            <div class="films__menu">\n                <button class="films__link">${item["title"]}</button>\n            </div>\n            `);
                     currentFilmsSection = "";
                     return;
-                } else if (!item.image) {
-                    console.error(item.title, "image is undefinded");
-                    return;
-                }
-                let filmsTemplateImage = "";
-                if (item.videoType == "youtube" || item.videoType == "vimeo") filmsTemplateImage = `\n            <a href="${item.urlPage}" class="films__item-image">\n\n                <img src="${item.image}" alt="">\n\n            </a>`; else filmsTemplateImage = `\n            <div class="films__item-image">\n\n                <img src="${item.image}" alt="">\n\n            </div>`;
-                let filmsTemplate = `\n        <article \n            data-video-type="${item["video-type"]}"\n            data-link-to-video="${item.video}"\n            data-title="${item.title}"\n            data-discription="${item.description}"\n            data-time-for-cover="${item["video-cover"]}"\n            class="films__item">\n            \n                \n                ${filmsTemplateImage}\n\n                <a target="_blank" href="${item.urlPage}" class="films__item-title">${item.title}</a>\n            </article>\n        `;
+                } else if (!item["image"]) return;
+                let filmsTemplateImage = ``;
+                if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") filmsTemplateImage = `\n            <a href="${item.urlPage}" class="films__item-image">\n\n                <img src="${item["image"]}" alt="">\n\n            </a>`; else filmsTemplateImage = `\n            <div class="films__item-image">\n\n                <img src="${item["image"]}" alt="">\n\n            </div>`;
+                let filmsTemplate = `\n        <article \n            data-video-type="${item["video-type"]}"\n            data-link-to-video="${item["video"]}"\n            data-title="${item["title"]}"\n            data-discription="${item["description"]}"\n            data-time-for-cover="${item["video-cover"]}"\n            class="films__item">\n            \n                \n                ${filmsTemplateImage}\n\n                <a target="_blank" href="${item["urlPage"]}" class="films__item-title">${item["title"]}</a>\n            </article>\n        `;
                 let filmItem = document.createElement("div");
                 filmItem.innerHTML = filmsTemplate;
                 if (!currentFilmsSection) {
@@ -20648,22 +20575,28 @@
         function sidebarParsingFilms(data) {
             let filmsContainer = document.querySelector(".sidebar");
             data.forEach((item => {
-                let currentFilmsSection = newFilmsSection("sidebar__item");
-                if (!item.title || !item.image) {
-                    console.error(item.title, "item is undefinded [SIDEBAR ITEM]");
+                let currentFilmsSection;
+                if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") {
+                    currentFilmsSection = document.createElement("a");
+                    currentFilmsSection.style.display = "inline-block";
+                    currentFilmsSection.setAttribute("href", item["urlPage"]);
+                } else currentFilmsSection = document.createElement("div");
+                currentFilmsSection.classList.add("sidebar__item");
+                if (!item["title"] || !item["image"]) {
+                    console.error(item["title"], "item is undefinded [SIDEBAR ITEM]");
                     return;
-                } else if (!item.title) {
-                    console.error(item.title, "image is undefinded [SIDEBAR ITEM]");
+                } else if (!item["title"]) {
+                    console.error(item["title"], "image is undefinded [SIDEBAR ITEM]");
                     return;
                 }
-                if (item.videoType == "youtube" || item.videoType == "vimeo") {
-                    var sideFilmStart = `<a href="${item.urlPage}" class="sidebar__item-content">`;
+                if (item["video-type"] == "youtube" || item["video-type"] == "vimeo") {
+                    var sideFilmStart = `<a href="${item["urlPage"]}" class="sidebar__item-content">`;
                     var sideFilmEnd = `</a>`;
                 } else {
-                    sideFilmStart = `<div\n        data-video-type="${item["video-type"]}"\n        data-link-to-video="${item.video}"\n        data-title="${item.title}"\n        data-discription="${item.description}"\n        data-time-for-cover="${item["video-cover"]}"\n        data class="sidebar__item-content">`;
+                    sideFilmStart = `<div\n            data-video-type="${item["video-type"]}"\n            data-link-to-video="${item["video"]}"\n            data-title="${item["title"]}"\n            data-discription="${item["description"]}"\n            data-time-for-cover="${item["video-cover"]}"\n            data class="sidebar__item-content">`;
                     sideFilmEnd = `</div>`;
                 }
-                let sideFilmTemplate = `\n        ${sideFilmStart}\n        <div class="sidebar__item-image">\n            <img src="${item.image}" alt="" class="">\n        </div>\n        <p class="sidebar__item-title">\n            ${item.title}\n        </p>\n        ${sideFilmEnd}\n    `;
+                let sideFilmTemplate = `\n        ${sideFilmStart}\n        <div class="sidebar__item-image">\n            <img src="${item["image"]}" alt="" class="">\n        </div>\n        <p class="sidebar__item-title">\n            ${item["title"]}\n        </p>\n        ${sideFilmEnd}\n    `;
                 currentFilmsSection.insertAdjacentHTML("beforeend", sideFilmTemplate);
                 filmsContainer.insertAdjacentElement("beforeend", currentFilmsSection);
             }));
